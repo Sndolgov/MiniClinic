@@ -10,6 +10,6 @@ create table indicator
 create unique index indicator_name_uindex
 	on indicator (name);
 
-INSERT INTO mini_clinic.indicator (name, threshold) VALUES ('HDL Cholesterol', 40);
+INSERT INTO mini_clinic.indicator (name, threshold) VALUES ('HDL-Cholesterol', 40);
 INSERT INTO mini_clinic.indicator (name, threshold) VALUES ('LDL Cholesterol', 100);
 INSERT INTO mini_clinic.indicator (name, threshold) VALUES ('A1C', 4);
