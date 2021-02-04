@@ -1,5 +1,6 @@
 package com.clinic.controller;
 
+import com.clinic.dto.IndicatorDTO;
 import com.clinic.dto.IndicatorsListDTO;
 import com.clinic.service.IndicatorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,15 @@ public class Controller
     private void getResult(@RequestBody IndicatorsListDTO indicators){
         System.out.println(indicators);
     }
+
     @GetMapping("indicators")
     private IndicatorsListDTO getResult(){
         return indicatorService.getIndicatorsList();
+    }
+
+    @PostMapping("indicator")
+    private String addIndicator(@RequestBody IndicatorDTO indicator){
+        indicatorService.addNewIndicator(indicator);
+        return "Indicator was saved successfully";
     }
 }

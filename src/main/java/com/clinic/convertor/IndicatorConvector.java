@@ -10,4 +10,8 @@ public class IndicatorConvector
     public IndicatorDTO getDtoFromEntity(IndicatorEntity entity){
         return new IndicatorDTO(entity.getName(), entity.getThreshold());
     }
+
+    public IndicatorEntity getEntityFromDto(IndicatorDTO dto){
+        return new IndicatorEntity(0, dto.getName(), dto.getThreshold());
+    }
 }

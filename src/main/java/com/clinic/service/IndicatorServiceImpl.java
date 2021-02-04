@@ -1,6 +1,7 @@
 package com.clinic.service;
 
 import com.clinic.convertor.IndicatorConvector;
+import com.clinic.dto.IndicatorDTO;
 import com.clinic.dto.IndicatorsListDTO;
 import com.clinic.repository.IndicatorJpa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,4 +23,12 @@ public class IndicatorServiceImpl implements IndicatorService
     {
         return new IndicatorsListDTO(indicatorJpa.findAll().stream().map(indicatorConvector::getDtoFromEntity).collect(Collectors.toList()));
     }
+
+    @Override
+    public void addNewIndicator(IndicatorDTO indicator)
+    {
+        indicatorJpa.save(indicatorConvector.getEntityFromDto(indicator));
+    }
+
+
 }
